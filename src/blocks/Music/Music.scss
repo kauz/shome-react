@@ -34,25 +34,25 @@
 
 
 
-.track {
-  @extend .music__track;
+.Track {
+  @extend .Music-Track;
 
-  &__description {
+  &-Description {
     grid-column: span 1;
   }
-  &__length {
+  &-Length {
     @extend %font_small;
     margin-left: 15px;
     color: $music-info;
     opacity: .84;
   }
-  &__body {
+  &-Body {
     @extend %flex,
     %align-center,
     %just-between;
     grid-column: span 1;
   }
-  &__input {
+  &-Input {
     @extend %max-width;
     appearance: none;
     outline: none;
@@ -70,16 +70,16 @@
 
 
 
-.m-nav {
-  @extend .music__nav;
+.MusicNav {
+  @extend .Music-Nav;
 
-  &__prev, &__next {
+  &-Prev, &-Next {
     grid-column: span 1;
     min-width: 60px;
     outline: none;
     border: none;
     padding: 0;
-    background: url("../images/Prev.svg") center no-repeat;
+    background: url("./Prev.svg") center no-repeat;
     cursor: pointer;
     transition: filter ease .5s;
     &:hover {
@@ -89,16 +89,16 @@
       filter: brightness(80%);
     }
   }
-  &__next {
+  &-Next {
     transform: rotate(180deg);
   }
-  &__volume {
+  &-Volume {
     @extend %flex,
             %align-center,
             %just-between;
     grid-column: span 8;
   }
-  &__volume-input {
+  &-VolumeInput {
     @extend %max-width;
     appearance: none;
     outline: none;
@@ -112,7 +112,7 @@
       height: 16px;
     }
   }
-  &__value {
+  &-Value {
     @extend %font_small;
     margin-left: 15px;
     color: $music-info;
