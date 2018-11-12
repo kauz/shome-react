@@ -1,0 +1,15 @@
+@import "variables";
+
+.Events {
+  @extend %grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 17px 1.4%;
+  grid-auto-flow: row dense;
+  
+  @media screen and (min-width: $laptop){
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media screen and (min-width: $laptop-l){
+    grid-auto-rows: unset;
+  }
+}

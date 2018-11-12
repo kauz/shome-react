@@ -7,13 +7,14 @@ import './Header.scss';
 
 export const cnHeader = cn('Header');
 
-let linkNames = ['События', 'Сводка', 'Устройства', 'Сценарии', 'Видеонаблюдение'];
+let linkNames = ['Сводка', 'Устройства', 'Сценарии'];
+let navType = {type: 'bold'};
 
 export class Header extends React.Component {
     render() {
         return <div className={cnHeader()}>
             <Logo />
-            <Nav value={linkNames} />
+            <Nav value={linkNames} type={navType} />
         </div>;
     }
 }

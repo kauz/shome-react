@@ -1,0 +1,18 @@
+@import "variables";
+
+.Main {
+  grid-area: c;
+  margin-top: $header_min-height;
+  margin-bottom: $header_min-height;
+
+  &-Title {
+    @extend %arial-bold,
+    %font_sbig;
+    margin-bottom: 7%;
+    text-align: center;
+    @media screen and (min-width: $tablet + 1){
+      margin-bottom: 2.1%;
+      text-align: left
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "variables";
+
+.Nav {
+
+  &_type_bold {
+    @extend %arial-bold;
+  }
+  &_type_footer {
+    @extend %arial;
+  }
+
+  &-List {
+    padding: 0;
+    @media screen and (max-width: $mobile-l){
+      display: none;
+    }
+  }
+
+
+  &-Item {
+    display: inline-block;
+    margin-right: $nav__item_mright;
+    &:last-child {margin-right: 0}
+  }
+
+  &-Link {
+    padding: 10px;
+    color: $nav__link_color;
+    opacity: 0.6;
+    text-decoration: none;
+    &:hover,&:focus {
+      opacity: 1;
+    }
+  }
+
+}

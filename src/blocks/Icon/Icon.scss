@@ -1,0 +1,15 @@
+@import "variables";
+
+.Icon {
+  &_type_stats { background-image: url("./stats.svg") };
+  &_type_key { background-image: url("./key.svg") };
+  &_type_robot-cleaner { background-image: url("./robot-cleaner.svg") };
+  &_type_router { background-image: url("./router.svg") };
+  &_type_thermal { background-image: url("./thermal.svg") };
+  &_type_ac { background-image: url("./ac-white.svg") };
+  &_type_music { background-image: url("./music.svg") };
+  &_type_fridge { background-image: url("./fridge.svg") };
+  &_type_battery { background-image: url("./battery.svg") };
+  &_type_cam { background-image: url("./cam-white.svg") };
+  &_type_kettle { background-image: url("./kettle.svg") };
+}

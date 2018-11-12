@@ -1,0 +1,26 @@
+@import "variables";
+
+#root, body, html {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.App {
+  @extend %grid;
+  height: inherit;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 64px 1fr 64px;
+  grid-template-areas: "h"
+  "c"
+  "f";
+  margin: 0;
+  font-size: 16px;
+  @media screen and (max-width: $mobile-m) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $_4k) {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,11 @@
+@import "variables";
+
+.Hamburger {
+  width: 16px;
+  height: 14px;
+  background: url("./hamburger.svg") no-repeat 100%;
+  cursor: pointer;
+  @media screen and (min-width: $mobile-l + 1){
+    display: none
+  }
+}

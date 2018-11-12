@@ -1,0 +1,33 @@
+@import "variables";
+
+.Data {
+
+  &-Button {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &-Items {
+    &_cam {
+      @extend %flex,
+              %just-between,
+              %align-center,
+              %max-width;
+      min-height: 40px;
+      padding-top: 10px;
+    }
+  }
+
+  &-Item {
+    @media screen and (min-width: $tablet + 1){
+      display: inline-block;
+      margin: 5px;
+    }
+  }
+
+  &-Digit {
+    @extend %arial-bold;
+  }
+
+}
