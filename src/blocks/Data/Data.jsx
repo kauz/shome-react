@@ -3,6 +3,8 @@ import {cn} from '@bem-react/classname';
 import './Data.scss';
 import {Button} from "../Button/Button";
 import {Music} from "../Music/Music";
+import {Image} from "./Image/Image";
+import {Graph} from "./Graph/Graph";
 
 let graph = require('./graph.svg');
 let mocks = {
@@ -19,19 +21,13 @@ export class Data extends React.Component {
         let data = this.props.data;
 
         if (data.type === 'graph') {
-            return <img className="Data-Img Event-Img" src={graph} alt="Еженедельный отчет по расходам ресурсов"/>;
+            return <Graph mixClass={cnData('Img')} src={graph}/>;
         } else if (data.temperature && data.humidity) {
-            return <div className={cnData('Items')}>
-                <p className={cnData('Item')}>Температура: <span className={cnData('Digit')}>{data.temperature + '℃'}</span></p>
-                <p className={cnData('Item')}>Влажность: <span className={cnData('Digit')}>{data.humidity + '%'}</span></p>
-            </div>;
+            return this.renderTemperature(data);
         } else if (data.track) {
             return <Music data={data}/>;
         } else if (data.image) {
-            return <img srcSet={`${mocks.small} 408w, ${mocks.medium} 1664w, ${mocks.large} 2496w`}
-                        sizes="(max-width: 768px) 408px, (max-width: 2560px) 1664px, 2496px"
-                        className="Data-Img Event-Img"
-                        src={mocks.small} alt="Пылесос застрял"/>;
+            return <Image sizes={mocks} mixClass={cnData('Img')}/>;
         } else if (data.buttons) {
             return this.renderButtons(data.buttons);
         }
@@ -49,6 +45,13 @@ export class Data extends React.Component {
                 {display}
             </div>
         )
+    }
+
+    renderTemperature(data) {
+        return <div className={cnData('Items')}>
+            <p className={cnData('Item')}>Температура: <span className={cnData('Digit')}>{data.temperature + '℃'}</span></p>
+            <p className={cnData('Item')}>Влажность: <span className={cnData('Digit')}>{data.humidity + '%'}</span></p>
+        </div>;
     }
 
     render() {
